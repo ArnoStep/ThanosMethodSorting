@@ -10,30 +10,32 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] array = new int[]{3, 12, -2, 6, 123182, 27137121, 0, -100, 222, 1};
+        int[] array = new int[]{3, 12, -2, 6, 122, 271, 0, -100, 222, 1, 211, 0, 12, 14, 44, 100, 1234, 343};
 
         // выбираем отрезок из массива для сортировки
-        thanosSort(array,0, 9);
+        thanosSort(array,0, 17);
 
         for (int i = 0; i < array.length; ++i) {
 
-            System.out.println(array[i] + " ");
+            System.out.print(array[i] + " ");
 
         }
 
     }
 
-    public static void thanosSort(int[] massive, int leftBound, int rightBound) {
+    public static void thanosSort(int[] array, int leftBound, int rightBound) {
 
-        if (rightBound <= leftBound) return;
+        if (rightBound <= leftBound) {
+            return;
+        }
 
         int middleValue = (leftBound + rightBound) / 2;
 
-        thanosSort(massive, leftBound, middleValue);
+        thanosSort(array, leftBound, middleValue);
 
-        thanosSort(massive, middleValue + 1, rightBound);
+        thanosSort(array, middleValue + 1, rightBound);
 
-        thanosSnap(massive, leftBound, middleValue, rightBound);
+        thanosSnap(array, leftBound, middleValue, rightBound);
 
     }
 
