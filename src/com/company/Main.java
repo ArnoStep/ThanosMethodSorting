@@ -2,6 +2,7 @@ package com.company;
 
 /**
  * Thanos method Sorting
+ *
  * @author Arno Stepanyan
  * @version 1.0
  */
@@ -13,7 +14,7 @@ public class Main {
         int[] array = new int[]{3, 12, -2, 6, 122, 271, 0, -100, 222, 1, 211, 0, 12, 14, 44, 100, 1234, 343};
 
         // выбираем отрезок из массива для сортировки
-        thanosSort(array,0, 17);
+        thanosSort(array, 0, array.length - 1);
 
         for (int i = 0; i < array.length; ++i) {
 
@@ -44,11 +45,11 @@ public class Main {
         int leftPartLength = middleValue - leftBound + 1;
         int rightPartLength = rightBound - middleValue;
 
-        int[] leftMassive = new int [leftPartLength];
-        int[] rightMassive = new int [rightPartLength];
+        int[] leftMassive = new int[leftPartLength];
+        int[] rightMassive = new int[rightPartLength];
 
         for (int i = 0; i < leftPartLength; ++i) {
-            leftMassive[i] = massive[leftBound+i];
+            leftMassive[i] = massive[leftBound + i];
         }
 
         for (int i = 0; i < rightPartLength; ++i) {
@@ -64,19 +65,14 @@ public class Main {
                 if (leftMassive[leftPartIterator] < rightMassive[rightPartIterator]) {
                     massive[i] = leftMassive[leftPartIterator];
                     leftPartIterator++;
-                }
-                else {
+                } else {
                     massive[i] = rightMassive[rightPartIterator];
                     rightPartIterator++;
                 }
-            }
-
-            else if (leftPartIterator < leftPartLength) {
+            } else if (leftPartIterator < leftPartLength) {
                 massive[i] = leftMassive[leftPartIterator];
                 leftPartIterator++;
-            }
-
-            else if (rightPartIterator < rightPartLength) {
+            } else if (rightPartIterator < rightPartLength) {
                 massive[i] = rightMassive[rightPartIterator];
                 rightPartIterator++;
             }
